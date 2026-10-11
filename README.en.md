@@ -220,16 +220,16 @@ require a secure context may be unavailable.
 
 ## App packages
 
-The current version is `v0.9.6`. Published packages are listed in
+The current version is `v0.9.7`. Published packages are listed in
 [Downloads / Releases](RELEASES.md) and the
 [latest official GitHub release](https://github.com/kadevin/ilab-conjure/releases/latest).
 
 New users should choose the standard packages:
 
-1. macOS: download `iLab-GPT-CONJURE-macos-arm64-0.9.6.dmg`
-   for Apple Silicon or `iLab-GPT-CONJURE-macos-x64-0.9.6.dmg`
+1. macOS: download `iLab-GPT-CONJURE-macos-arm64-0.9.7.dmg`
+   for Apple Silicon or `iLab-GPT-CONJURE-macos-x64-0.9.7.dmg`
    for Intel, then drag `iLab GPT CONJURE.app` to Applications.
-2. Windows: download `iLab-GPT-CONJURE-windows-x64_0.9.6.zip`,
+2. Windows: download `iLab-GPT-CONJURE-windows-x64_0.9.7.zip`,
    extract it into a normal user directory, and run `iLab GPT CONJURE.exe`.
 
 Standard packages store user data in `~/Library/Application Support/iLab GPT
@@ -392,8 +392,9 @@ products, brand assets, style references, and any image you want to reuse.
 
 The prompt editor supports three atomic chip types:
 
-- `@` gallery chip: searches the public gallery, inserts the selected image into
-  reference inputs, and adds visible reference notes for the model.
+- `@` image chip: searches current references first, followed by the public gallery.
+  Selecting an upload inserts a mention; selecting a gallery image also attaches it.
+  Use arrow keys to choose, Enter to confirm, and Esc to dismiss.
 - `#` color chip: inserts a hexadecimal color value such as `#FF6600`; useful
   for product, poster, brand, material, or background color constraints.
 - `~` snippet chip: inserts a saved prompt snippet by short tag. The editor keeps
@@ -403,6 +404,15 @@ The prompt editor supports three atomic chip types:
 Snippet chips can be created from selected prompt text and can later be viewed,
 expanded into plain text, edited, or reused with `~`, `～`, or common tilde
 variants.
+
+Image mentions resolve to reference numbers after the server orders and deduplicates
+images, including in Original mode, which adds no gallery usage notes. Repeated
+mentions share one image; equal names do not merge identities. Removing an upload
+chip keeps its image; removing the last gallery chip also detaches that gallery
+reference. Removing an image removes its mentions, with Restore inputs available
+to recover the inputs together. History and drafts retain identities and block
+missing references. Pasted plain `@Image 1` text does not bind to an image. Saving
+a template turns upload mentions into placeholders such as `{{Image 1}}`.
 
 ## Prompt templates
 

@@ -61,6 +61,26 @@ class ReferenceAssetSubmissionRetentionTests(unittest.TestCase):
                 with self.subTest(mode=mode, canonical=canonical), self.fixture() as case:
                     self.assert_submits_and_executes(case, mode, "CF", canonical=canonical)
 
+    def test_structured_mentions_keep_deduplicated_inputs_under_cache_pressure(self):
+        parts = ["Place ", {"text": "@second", "source": {"kind": "upload", "index": 2}},
+                 " beside ", {"text": "@first", "source": {"kind": "upload", "index": 0}}]
+        context = {"version": 1, "template": "reference image {number}", "parts": parts, "model_parts": parts}
+        for mode in ("generate", "edit"):
+            with self.subTest(mode=mode), self.fixture() as case:
+                response = case.submit(mode, "DCCF", prompt_fields={
+                    "prompt": "Place @second beside @first", "prompt_image_mentions": json.dumps(context),
+                })
+                self.assertEqual(response.status_code, 200, response.text)
+                task_id = response.json()["task"]["task_id"]
+                asyncio.run(case.app.state.queue_manager.run_available_once())
+                calls = case.fake.edit_calls if mode == "edit" else case.fake.generate_calls
+                self.assertEqual(case.data_names(calls[-1]["images" if mode == "edit" else "reference_images"]), list("DCF"))
+                self.assertEqual(calls[-1]["prompt"], "Place reference image 3 beside reference image 2")
+                stored = case.app.state.storage.read_metadata(task_id)
+                self.assertEqual(stored["status"], "completed", stored.get("last_error"))
+                source = stored["prompt_image_mentions"]["parts"][1]["source"]
+                self.assertEqual(source, {"kind": "asset", "id": hashlib.sha256(case.images["F"]).hexdigest()})
+
     def test_new_upload_does_not_evict_a_selected_recent_image_before_touch(self):
         for mode in ("generate", "edit"):
             with self.subTest(mode=mode), self.fixture(protected="B") as case:
