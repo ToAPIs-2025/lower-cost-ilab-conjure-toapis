@@ -1,0 +1,35 @@
+{
+  "date": "2026-10-15",
+  "image_tasks": 4,
+  "credits": 10.879999999999999,
+  "usd": 0.0544,
+  "rate_usd_per_credit": 0.005,
+  "source": "Owner backend screenshot; API billing remains null",
+  "video_submissions_included": false,
+  "items": [
+    {
+      "task_id": "tsk_img_01M4YT4R29P19T7GX7413W6EN7",
+      "model": "gemini-nano-banana-2.1",
+      "credits": 3,
+      "usd": 0.015
+    },
+    {
+      "task_id": "tsk_img_01M4YT3EX4ZYVKD85SFFX8EXE7",
+      "model": "gpt-image-2.5-flare",
+      "credits": 4.5,
+      "usd": 0.0225
+    },
+    {
+      "task_id": "tsk_img_01M4YT35DAWV93F18APNTJYX61",
+      "model": "gpt-image-2-vip",
+      "credits": 0.38,
+      "usd": 0.0019
+    },
+    {
+      "task_id": "tsk_img_01M4YT5NZ2NTZZP4H6JPJJ7Z9N",
+      "model": "gpt-image-2",
+      "credits": 3,
+      "usd": 0.015
+    }
+  ]
+}

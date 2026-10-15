@@ -63,6 +63,10 @@ class OpenAIImagesAdapter:
         self._transport = transport
 
     def execute(self, plan: ExecutionPlan) -> GenerationResult:
+        from urllib.parse import urlparse
+        if urlparse(plan.provider.base_url).hostname in ('toapis.com','toapis.cn'):
+            from codex_image.providers.toapis import execute_toapis
+            return execute_toapis(plan)
         client = OpenAIImagesImageClient(
             api_key=plan.provider.api_key,
             base_url=plan.provider.base_url,

@@ -1,0 +1,98 @@
+{
+  "task_id": "tsk_img_01M4YT5NZ2NTZZP4H6JPJJ7Z9N",
+  "model": "gpt-image-2",
+  "quote_usd": 0.015,
+  "receipt": {
+    "task_id": "tsk_img_01M4YT5NZ2NTZZP4H6JPJJ7Z9N",
+    "state": "completed",
+    "request": {
+      "model": "gpt-image-2",
+      "prompt": "An original ceramic desk lamp shaped like a smooth folded ribbon, cream glaze, tiny brass switch, on a dark walnut desk beside a plain notebook. Soft window light from the left, tasteful industrial design catalog photograph, accurate materials, no text, no logos, square frame.",
+      "n": 1,
+      "size": "1:1",
+      "resolution": "1K",
+      "metadata": {
+        "resolution": "1K"
+      }
+    },
+    "observations": [
+      {
+        "status": "in_progress",
+        "billing": {
+          "status": "pending"
+        }
+      },
+      {
+        "status": "in_progress",
+        "billing": {
+          "status": "pending"
+        }
+      },
+      {
+        "status": "in_progress",
+        "billing": {
+          "status": "pending"
+        }
+      },
+      {
+        "status": "in_progress",
+        "billing": {
+          "status": "pending"
+        }
+      },
+      {
+        "status": "in_progress",
+        "billing": {
+          "status": "pending"
+        }
+      },
+      {
+        "status": "in_progress",
+        "billing": {
+          "status": "pending"
+        }
+      },
+      {
+        "status": "in_progress",
+        "billing": {
+          "status": "pending"
+        }
+      },
+      {
+        "status": "in_progress",
+        "billing": {
+          "status": "pending"
+        }
+      },
+      {
+        "status": "in_progress",
+        "billing": {
+          "status": "pending"
+        }
+      },
+      {
+        "status": "completed",
+        "billing": null
+      }
+    ],
+    "billing": null
+  },
+  "actual_charge_usd": 0.015,
+  "status": "completed",
+  "date": "2026-10-15",
+  "prompt": "An original ceramic desk lamp shaped like a smooth folded ribbon, cream glaze, tiny brass switch, on a dark walnut desk beside a plain notebook. Soft window light from the left, tasteful industrial design catalog photograph, accurate materials, no text, no logos, square frame.",
+  "output": "examples/gpt-image-2.png",
+  "original_output": "examples/gpt-image-2.original.png",
+  "actual_dimensions": [
+    1280,
+    1280
+  ],
+  "original_format": "PNG",
+  "source_sha256": "0899ce4ea2ded4ed5b8df6c131ed64f6e7369e9fe9ad30fbe9dddf2a0ea0e687",
+  "elapsed_seconds": 87.86,
+  "scope": "原 OpenAIImagesAdapter → ToAPIs异步适配 → 原 GenerationResult；WebUI交互未验收。",
+  "quote_source": "GET /v1/pricing, 2026-10-15",
+  "actual_credits": 3,
+  "charge_source": "Owner-provided backend Task Logs screenshot, 2026-10-15; matched task ID prefix and model; 1 credit = USD 0.005",
+  "charge_confirmed_date": "2026-10-15"
+}

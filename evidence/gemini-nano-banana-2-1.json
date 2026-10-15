@@ -1,0 +1,67 @@
+{
+  "task_id": "tsk_img_01M4YT4R29P19T7GX7413W6EN7",
+  "model": "gemini-nano-banana-2.1",
+  "quote_usd": 0.015,
+  "receipt": {
+    "task_id": "tsk_img_01M4YT4R29P19T7GX7413W6EN7",
+    "state": "completed",
+    "request": {
+      "model": "gemini-nano-banana-2.1",
+      "prompt": "An original ceramic desk lamp shaped like a smooth folded ribbon, cream glaze, tiny brass switch, on a dark walnut desk beside a plain notebook. Soft window light from the left, tasteful industrial design catalog photograph, accurate materials, no text, no logos, square frame.",
+      "n": 1,
+      "size": "1:1",
+      "metadata": {
+        "resolution": "1K"
+      }
+    },
+    "observations": [
+      {
+        "status": "in_progress",
+        "billing": {
+          "status": "pending"
+        }
+      },
+      {
+        "status": "in_progress",
+        "billing": {
+          "status": "pending"
+        }
+      },
+      {
+        "status": "in_progress",
+        "billing": {
+          "status": "pending"
+        }
+      },
+      {
+        "status": "in_progress",
+        "billing": {
+          "status": "pending"
+        }
+      },
+      {
+        "status": "completed",
+        "billing": null
+      }
+    ],
+    "billing": null
+  },
+  "actual_charge_usd": 0.015,
+  "status": "completed",
+  "date": "2026-10-15",
+  "prompt": "An original ceramic desk lamp shaped like a smooth folded ribbon, cream glaze, tiny brass switch, on a dark walnut desk beside a plain notebook. Soft window light from the left, tasteful industrial design catalog photograph, accurate materials, no text, no logos, square frame.",
+  "output": "examples/gemini-nano-banana-2-1.png",
+  "original_output": "examples/gemini-nano-banana-2-1.jpg",
+  "actual_dimensions": [
+    1024,
+    1024
+  ],
+  "original_format": "JPEG",
+  "source_sha256": "6057cdc1e78dcaded66c917deea610136bb055ab0f2176d8da0835337276eab1",
+  "elapsed_seconds": 42.12,
+  "scope": "原 OpenAIImagesAdapter → ToAPIs异步适配 → 原 GenerationResult；WebUI交互未验收。",
+  "quote_source": "GET /v1/pricing, 2026-10-15",
+  "actual_credits": 3,
+  "charge_source": "Owner-provided backend Task Logs screenshot, 2026-10-15; matched task ID prefix and model; 1 credit = USD 0.005",
+  "charge_confirmed_date": "2026-10-15"
+}

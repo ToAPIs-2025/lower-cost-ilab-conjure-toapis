@@ -22,3 +22,10 @@ input/
 inputs/
 output/
 outputs/
+
+# ToAPIs private local state
+.env
+.toapis-state/
+private-state/
+__pycache__/
+node_modules/
